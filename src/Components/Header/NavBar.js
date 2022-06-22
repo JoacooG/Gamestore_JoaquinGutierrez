@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "../../imgs/logo.png";
-import { FaShoppingCart } from "react-icons/fa";
+import CartWidget from "./CartWidget";
 
 
 const Navbar = () =>{
@@ -14,7 +14,7 @@ const Navbar = () =>{
                             <li><a href="">Cat 1</a></li>
                             <li><a href="">Cat 2</a></li>
                             <li><a href="">Cat 3</a></li>
-                            <FaShoppingCart />
+                            <CartWidget />
                         </ul>
                         
                     </div>
@@ -28,7 +28,7 @@ const styles = {
     imagen: {
         width: '50%',
         margin: '5px',
-    }
+    },
 }
 
 
