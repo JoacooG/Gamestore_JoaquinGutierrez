@@ -2,7 +2,8 @@ import React from "react";
 
 const Spinner = () =>{
     return(
-        <div class="preloader-wrapper small active">
+        <div style={styles.container}>
+        <div class="preloader-wrapper large active">
         <div class="spinner-layer">
         <div class="circle-clipper left">
         <div class="circle"></div>
@@ -13,7 +14,14 @@ const Spinner = () =>{
         </div>
         </div>
         </div>
+        </div>
     )
 }
-
+const styles = {
+    container: {
+        display: 'flex',
+        justifyContent: 'center',
+        alingItems: 'center'
+    }
+}
 export default Spinner

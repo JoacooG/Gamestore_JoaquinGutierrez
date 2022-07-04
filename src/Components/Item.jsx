@@ -1,5 +1,5 @@
 import React from "react";
-import ItemCount from "./ItemCount";
+
 
 const Item = ({productos}) => {
     return (
@@ -16,7 +16,6 @@ const Item = ({productos}) => {
                 <a href="#">Mas Informacion</a>
                 </div>
             </div>
-            <ItemCount stock= {productos.stock} initial={1} onAdd={contador => alert(`Se agregagon ${contador} items al carro`)} />
         </div>
     )
 }
