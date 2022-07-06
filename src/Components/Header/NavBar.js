@@ -1,6 +1,8 @@
 import React from "react";
 import Logo from "../../imgs/logo.png";
 import CartWidget from "./CartWidget";
+import { Link } from "react-router-dom";
+
 
 
 const Navbar = () =>{
@@ -9,11 +11,12 @@ const Navbar = () =>{
             <nav>
                 <div class="nav-wrapper black">
                     <div className="container">
-                        <a href="#" class="brand-logo"><img style={styles.imagen} src={Logo} alt="" /></a>
+                        <Link to='/'><img style={styles.imagen} src={Logo} alt="" /></Link>
                         <ul id="nav-mobile" class="right hide-on-med-and-down">
-                            <li><a href="">Cat 1</a></li>
-                            <li><a href="">Cat 2</a></li>
-                            <li><a href="">Cat 3</a></li>
+                            <li><Link to='/productos/:categorias'>FPS</Link></li>
+                            <li><Link to='/productos'>RPG</Link></li>
+                            <li><Link to='/productos'>Accion</Link></li>
+                            <li><Link to='/productos'>Todos los Juegos</Link></li>
                             <CartWidget />
                         </ul>
                         
@@ -26,7 +29,7 @@ const Navbar = () =>{
 
 const styles = {
     imagen: {
-        width: '50%',
+        width: '15%',
         margin: '5px',
     },
 }

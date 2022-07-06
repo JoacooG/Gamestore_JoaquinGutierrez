@@ -1,7 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 
 const Item = ({productos}) => {
+    const navegar = useNavigate();
+
     return (
         <div class="row">
             <div class="card medium">
@@ -13,7 +16,7 @@ const Item = ({productos}) => {
                     <p>ARS ${productos.price}</p>
                 </div>
                 <div class="card-action">
-                <a href="#">Mas Informacion</a>
+                <button className='btn green' onClick={()=>navegar(`/detalle/${productos.id}`)}>Mas Informacion</button>
                 </div>
             </div>
         </div>
