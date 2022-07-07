@@ -17,7 +17,7 @@ const Navbar = () =>{
                             <li><Link to='/productos/RPG'>RPG</Link></li>
                             <li><Link to='/productos/Accion'>Accion</Link></li>
                             <li><Link to='/productos'>Todos los Juegos</Link></li>
-                            <Link to='/cart'><CartWidget /></Link>
+                            <li><Link to='/cart'><CartWidget /></Link></li>
                         </ul>
                         
                     </div>
