@@ -1,3 +1,12 @@
+Proyecto Final Curso React.JS de CoderHouse
+Alumno: Joaquin Gutierrez
+En este proyecto se podran observar los avances a la hora de crear una app E-Commerce ficticia, la cual elegi que sea una tienda de videojuegos.
+Se esta utilizando React-Icons, Materialize CSS , React-Router-Dom y algunas extensiones mas.
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
