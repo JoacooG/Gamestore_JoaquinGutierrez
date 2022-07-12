@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 
-const ItemCount = ({ stock, initial, onAdd }) => {
+const ItemCount = ({ stock, contador, setContador, onAdd }) => {
     
-    const [contador, setContador] = useState(initial);
+    
 
     const ClickSuma = () => {
         if (contador < stock) {

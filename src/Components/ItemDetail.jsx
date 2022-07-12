@@ -1,11 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ItemCount from './ItemCount'
+import { useNavigate } from 'react-router';
 
 const ItemDetail = ({productos}) => {
 
+    const initial = 1;
+
+    const [contador, setContador] = useState(initial);
+
+    const [compra, setCompra] = useState(false);
+
+    const navegar = useNavigate();
+
     const onAdd = (contador) => {
+        setCompra(true)
         alert(`Se agregaron ${contador} items al carro`)
     }
+    
 
     return (
         <div>
@@ -15,7 +26,7 @@ const ItemDetail = ({productos}) => {
             </div>
             <p style={styles.text}>{productos.description}</p>
             <div style={styles.container}>
-            <ItemCount stock= {productos.stock} initial={1} onAdd={onAdd} />
+            {compra ? <button className="btn blue" onClick={()=>navegar('/cart')}>Ir al carrito</button> : <ItemCount stock={productos.stock} initial={1} contador={contador} setContador={setContador} onAdd={onAdd} />}
             </div>
         </div>
     )
