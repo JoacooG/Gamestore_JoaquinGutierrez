@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import ItemCount from './ItemCount'
 import { useNavigate } from 'react-router';
+import { cartContext } from '../Context/CartContext';
 
 const ItemDetail = ({productos}) => {
 
@@ -10,11 +11,14 @@ const ItemDetail = ({productos}) => {
 
     const [compra, setCompra] = useState(false);
 
+    const { agregarProducto } = useContext(cartContext);
+
     const navegar = useNavigate();
 
     const onAdd = (contador) => {
+        agregarProducto({...productos, cantidad: contador});
         setCompra(true)
-        alert(`Se agregaron ${contador} items al carro`)
+
     }
     
 
