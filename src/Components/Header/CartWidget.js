@@ -7,12 +7,12 @@ const CartWidget = () => {
     const { cantidadProductos } = useContext(cartContext)
 
     return (
-        <>
+        <div style={{width:'3rem',display:'flex', alignItems:'center', justifyContent:'space-between'}}>
         <IconContext.Provider value={{size: "25px"}}>
         <FaShoppingCart />
         </IconContext.Provider>
         <p>{cantidadProductos}</p>
-        </>
+        </div>
 
     )
 }

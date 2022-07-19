@@ -38,8 +38,11 @@ const CartCustomProvider = ({ children }) => {
             setProductos([...productos, producto]);
         }
     };
+    const calcularTotal = ()=>{
+        return productos.reduce((acumulado, actual)=> acumulado + actual.price * actual.cantidad, 0);
+    };
     return(
-        <Provider value={{ productos, agregarProducto, borrarProducto, cantidadProductos, clear}}>
+        <Provider value={{ productos, agregarProducto, borrarProducto, cantidadProductos, clear, calcularTotal}}>
             {children}
         </Provider>
     )

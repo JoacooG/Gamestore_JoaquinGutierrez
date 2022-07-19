@@ -12,7 +12,7 @@ const Navbar = () =>{
                 <div class="nav-wrapper black">
                     <div className="container">
                         <Link to='/'><img style={styles.imagen} src={Logo} alt="" /></Link>
-                        <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <ul id="nav-mobile" class="right hide-on-med-and-down" style={{display:'flex', justifyContent:'center', alignItems:'center', marginTop:'-10px'}}>
                             <li><Link to='/productos/FPS'>FPS</Link></li>
                             <li><Link to='/productos/RPG'>RPG</Link></li>
                             <li><Link to='/productos/Accion'>Accion</Link></li>
