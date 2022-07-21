@@ -1,13 +1,14 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
+
 const firebaseConfig = {
-  apiKey: "AIzaSyA6N0FHuscUx6tsTwxa_EVTp-i-ufQcERE",
-  authDomain: "gamestore-argentina.firebaseapp.com",
-  projectId: "gamestore-argentina",
-  storageBucket: "gamestore-argentina.appspot.com",
-  messagingSenderId: "539010959170",
-  appId: "1:539010959170:web:f2dc1582ce29962a1faadb"
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId
 };
 
 const app = initializeApp(firebaseConfig);
