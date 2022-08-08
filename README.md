@@ -1,6 +1,6 @@
 # Proyecto Final ReactJS CoderHouse
 
-![Project Image](https://i.postimg.cc/wMvLPYM4/logo.png)
+[![logo.png](https://i.postimg.cc/wMvLPYM4/logo.png)](https://postimg.cc/r0BD0bS5)
 
 
 
