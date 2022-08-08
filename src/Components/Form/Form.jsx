@@ -2,11 +2,14 @@ import React, { useEffect, useState, useContext } from "react";
 import { db } from "../../firebase";
 import { collection, addDoc, serverTimestamp } from "@firebase/firestore";
 import { cartContext } from "../../Context/CartContext";
+import {  useNavigate } from "react-router-dom";
 
 const Form = () => {
   const { productos, calcularTotal, clear } = useContext(cartContext);
 
   const [checkout, setCheckout] = useState(false)
+
+  const[orden, setOrden] = useState('')
 
   const [user, setUser] = useState({
     nombre: '',
@@ -14,6 +17,8 @@ const Form = () => {
     email: '',
   });
   const [isSubmitDisabled, setIsSubmitDisabled] = useState(true);
+
+  const navigate= useNavigate()
 
   const handleChangeUser = (event) => {
     const { name, value } = event.target
@@ -34,8 +39,8 @@ const Form = () => {
       total: calcularTotal(),
     })
       .then((result) => {
+        setOrden(result.id)
         clear();
-        // ToDo: navigate(`/congrats?venta=${result.id}`)
       })
   };
 
@@ -47,21 +52,31 @@ const Form = () => {
 
   return (
     <div style={{ display: 'flex', border: '2px solid black', margin: '50px', padding: '10px', alignItems: 'center', justifyContent: 'space-between' }}>
-      <form className='form' onSubmit={handleSubmitUser}>
-        <label className='label'>
-          Nombre
-          <input className='input' name='nombre' type='text' onChange={handleChangeUser} value={user.nombre} />
-        </label>
-        <label className='label'>
-          Apellido
-          <input className='input' name='apellido' type='text' onChange={handleChangeUser} value={user.apellido} />
-        </label>
-        <label className='label'>
-          Email
-          <input className='input' name='email' type='email' onChange={handleChangeUser} value={user.email} />
-        </label>
-        <input className='btn green' type='submit' disabled={isSubmitDisabled} value='Comprar' />
-      </form>
+      {!orden
+        ? <form className='form' onSubmit={handleSubmitUser}>
+          <label className='label'>
+            Nombre
+            <input className='input' name='nombre' type='text' onChange={handleChangeUser} value={user.nombre} />
+          </label>
+          <label className='label'>
+            Apellido
+            <input className='input' name='apellido' type='text' onChange={handleChangeUser} value={user.apellido} />
+          </label>
+          <label className='label'>
+            Email
+            <input className='input' name='email' type='email' onChange={handleChangeUser} value={user.email} />
+          </label>
+          <input className='btn green' type='submit' disabled={isSubmitDisabled} value='Comprar' />
+        </form>
+        : <div>
+
+        <h2>Muchas gracias por su compra!</h2>
+
+        <h5>Su orden : {orden}</h5>
+
+        <button className='btn blue' onClick={()=> navigate('/')}>Volver</button>
+
+        </div>}
     </div>
   )
 }

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import ItemDetail from './ItemDetail'
-import Spinner from './Spinner'
+import ItemDetail from '../ItemDetail/ItemDetail'
+import Spinner from '../Spinner/Spinner'
 import { useParams } from 'react-router'
-import { db } from '../firebase'
+import { db } from '../../firebase'
 import { doc, getDoc, collection } from '@firebase/firestore'
 
 const ItemDetailContainer = () => {

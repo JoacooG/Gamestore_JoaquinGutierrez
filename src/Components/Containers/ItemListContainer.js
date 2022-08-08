@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import ItemList from "./ItemList";
-import Spinner from "./Spinner";
+import ItemList from "../ItemList/ItemList";
+import Spinner from "../Spinner/Spinner";
 import { useParams } from "react-router";
-import { db } from "../firebase";
+import { db } from "../../firebase";
 import { getDocs, collection, query, where } from "@firebase/firestore";
 
 
